@@ -1,4 +1,4 @@
-# 🧿 Pokédex App
+# Pokédex App
 
 A modern and interactive web application built with **React** and **Vite**, serving as a comprehensive Pokédex for the first 151 Pokémon. The app allows users to **browse**, **search**, and **view detailed information** for each Pokémon, including their types, stats, sprites, and move descriptions — all enhanced with efficient data caching and a vibrant UI.
 
