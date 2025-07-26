@@ -1,0 +1,228 @@
+/* fanta.css - Overhauled for a more vibrant and modern look */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    /* Base Colors - More vibrant and distinct */
+    --background-primary: #fdfdfd; /* Off-white for clean base */
+    --background-secondary: #eff3f7; /* Light grey for sections */
+    --background-tertiary: #dce3e9; /* Muted grey for subtle contrast */
+    --background-accent-light: #81e6d9; /* Light turquoise for subtle accents */
+    --background-accent-dark: #38b2ac; /* Darker turquoise for active states */
+
+    /* Brand/Main Accent Colors - Playful and bright */
+    --brand-primary: #4299e1; /* A bright, friendly blue */
+    --brand-secondary: #805ad5; /* A vibrant purple */
+    --brand-gradient-start: #667eea; /* Deeper blue for gradients */
+    --brand-gradient-end: #764ba2; /* Rich purple for gradients */
+
+    /* Text Colors */
+    --text-primary: #2d3748; /* Dark charcoal for main text */
+    --text-secondary: #4a5568; /* Medium gray for secondary text */
+    --text-light: #ffffff; /* White for use on dark backgrounds */
+
+    /* Border Colors */
+    --border-light: #e2e8f0; /* Very light border */
+    --border-medium: #cbd5e0; /* Standard border */
+    --border-dark: #a0aec0; /* Darker border for emphasis */
+
+    /* Shadows - More pronounced and layered */
+    --shadow-sm: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    --shadow-md: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    --shadow-lg: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --shadow-inset: inset rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+
+    /* Border Radii - Slightly more rounded, softer */
+    --radius-sm: 0.375rem; /* 6px */
+    --radius-md: 0.75rem; /* 12px */
+    --radius-lg: 1.25rem; /* 20px */
+
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+    --transition-timing: ease-out;
+}
+
+/* Universal box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Base Body & Root Font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* A bit softer than Inter */
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-secondary); /* Main application background */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings - More visual weight */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+    font-family: 'Montserrat', sans-serif; /* Stronger font for titles */
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+h1 { font-size: 2.8rem; font-weight: 700; }
+h2 { font-size: 2.2rem; font-weight: 700; }
+h3 { font-size: 1.75rem; font-weight: 600; }
+h4 { font-size: 1.25rem; font-weight: 600; }
+h5 { font-size: 1rem; font-weight: 500; }
+h6 { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); }
+
+/* Paragraphs & Links */
+p {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--brand-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) var(--transition-timing);
+}
+
+a:hover {
+    color: var(--brand-secondary);
+    text-decoration: underline;
+}
+
+/* Images & Multimedia */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Forms - Cleaner inputs, vibrant focus */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--background-primary);
+    transition: border-color var(--transition-speed) var(--transition-timing),
+                box-shadow var(--transition-speed) var(--transition-timing);
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2); /* Soft blue ring */
+}
+
+/* Buttons - More interactive and styled */
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none; /* No default border */
+    border-radius: var(--radius-sm);
+    background-color: var(--background-tertiary);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-speed) var(--transition-timing);
+    outline: none;
+}
+
+button:hover {
+    background-color: var(--background-secondary);
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: var(--shadow-md);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-inset);
+}
+
+/* Primary Button - Bold and vibrant */
+.button-primary {
+    background: linear-gradient(135deg, var(--brand-gradient-start), var(--brand-gradient-end));
+    color: var(--text-light);
+    box-shadow: var(--shadow-md);
+}
+
+.button-primary:hover {
+    background: linear-gradient(135deg, var(--brand-gradient-end), var(--brand-gradient-start)); /* Gradient shift */
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+}
+
+/* Secondary Button - Outline style */
+.button-secondary {
+    background-color: transparent;
+    color: var(--brand-primary);
+    border: 2px solid var(--brand-primary);
+    box-shadow: none;
+}
+
+.button-secondary:hover {
+    background-color: rgba(66, 153, 225, 0.1);
+    color: var(--brand-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Cards - Prominent and layered */
+.card {
+    background-color: var(--background-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    transition: box-shadow var(--transition-speed) var(--transition-timing),
+                transform var(--transition-speed) var(--transition-timing);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px); /* More pronounced lift */
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+
+.text-gradient {
+    background: linear-gradient(to right, var(--brand-gradient-start), var(--brand-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+    body {
+        font-size: 1.05rem;
+    }
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.8rem; }
+    h3 { font-size: 2.2rem; }
+    h4 { font-size: 1.5rem; }
+}
